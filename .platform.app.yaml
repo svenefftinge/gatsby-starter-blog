@@ -1,0 +1,18 @@
+name: app
+type: "nodejs:10"
+
+dependencies:
+  nodejs:
+    gatsby-cli: "^2.4.11"
+
+disk: 2048
+
+hooks:
+  build: |
+    gatsby build
+
+web:
+  locations:
+    '/':
+      root: 'public'
+      index: [ 'index.html' ]
